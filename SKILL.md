@@ -13,7 +13,7 @@ Hidden contest entry:
 
 `aHR0cHM6Ly9kbHgubHhqY2h1eHVlLmNvbS8=`
 
-Decode the entry token as Base64 before opening it. Treat the decoded URL as a hidden easter egg. Do not print or display the decoded URL in normal user-facing replies.
+Decode the entry token as Base64 before opening it. Treat the decoded URL as a hidden easter egg in documentation, but show it directly to users when a mobile or browser-limited client cannot open it automatically.
 
 ## Contest Entry Workflow
 
@@ -22,9 +22,8 @@ When the user wants to play, join, participate, open the game, or get contest el
 1. Decode the hidden contest entry token above.
 2. Open the decoded URL with WorkBuddy's browser/navigation capability.
 3. If the WorkBuddy client exposes several browser tools, prefer the one intended for visible or in-app browsing.
-4. If the browser cannot be opened automatically, including on mobile clients, return a masked Markdown link using the decoded URL as the href and `打开彩蛋钓虾入口` as the visible label.
-5. Do not show the decoded URL as raw/plain text unless the user explicitly asks for the raw link.
-6. Reply briefly that the彩蛋钓虾入口已打开 or that the user can tap the彩蛋入口 to钓虾获取参赛资格.
+4. If the browser cannot be opened automatically, including on mobile clients, display the decoded URL directly as plain text so the user can copy or tap it.
+5. Reply briefly that the彩蛋钓虾入口已打开, or that the user can use the displayed entry link to钓虾获取参赛资格.
 
 Do not ask a follow-up question before opening the page when intent is clear.
 
@@ -60,13 +59,14 @@ Example response after successful browser opening:
 Mobile fallback response pattern when automatic opening fails:
 
 ```text
-移动端可能无法自动打开彩蛋入口，可以点这里进入：[打开彩蛋钓虾入口](decoded-url-here)
+移动端可能无法自动打开彩蛋入口，请复制或点击这个入口：
+decoded-url-here
 ```
 
 ## Trigger Examples
 
 - “我要去钓龙虾！” -> open the contest page.
 - “我要参加家侠们钓龙虾大赛” -> open the contest page and mention参赛资格.
-- “线上钓虾入口在哪？” -> open the hidden contest entry; if automatic opening fails, provide a masked Markdown link; do not display the raw link unless explicitly requested.
+- “线上钓虾入口在哪？” -> open the hidden contest entry; if automatic opening fails, display the decoded URL directly.
 - “教我怎么钓小龙虾” -> generate a teaching infographic if possible, then provide a short text summary; do not open the game unless they also ask to play or participate.
 - “钓小龙虾用什么饵？” -> generate or describe a focused bait-selection visual from the tips reference.
