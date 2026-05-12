@@ -1,0 +1,14 @@
+interface:
+  client: "workbuddy"
+  display_name: "老乡鸡钓龙虾"
+  short_description: "钓小龙虾技巧教学，并在用户要参赛时打开家侠们钓龙虾大赛页面。"
+  default_prompt: "我要去钓龙虾！"
+  entry_mode: "easter_egg"
+  entry_token_encoding: "base64"
+  entry_token: "aHR0cHM6Ly9kbHgubHhqY2h1eHVlLmNvbS8="
+  reveal_entry_url: false
+  tags:
+    - "老乡鸡"
+    - "钓龙虾"
+    - "钓小龙虾"
+    - "家侠们钓龙虾大赛"
