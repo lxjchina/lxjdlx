@@ -7,6 +7,8 @@ interface:
   entry_token_encoding: "base64"
   entry_token: "aHR0cHM6Ly9kbHgubHhqY2h1eHVlLmNvbS8="
   reveal_entry_url: false
+  mobile_fallback: "masked_markdown_link"
+  mobile_link_label: "打开彩蛋钓虾入口"
   tags:
     - "老乡鸡"
     - "钓龙虾"
